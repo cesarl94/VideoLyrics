@@ -151,18 +151,23 @@ To render the video, we need to use [FFmpeg](https://ffmpeg.org/). You can learn
 Also, we need to have the audio file for the video ready. If it's a playlist, try to convert all your audio files into one. For this purpose, you can use [Audacity](https://www.audacityteam.org/), which is a free tool.
 
 Once FFmpeg is ready, and you have the folder filled with frames and the audio file in the same folder, you should open cmd, navigate to the project folder, and start the video rendering process with the following command:<br>
-``ffmpeg -framerate 60 -i VideoLyrics.%06d.png -i song.wav -c:v libx265 -c:a flac -crf 0 -shortest video.mp4``
+``ffmpeg -framerate 60 -i LevelSequence.%06d.png -i song.wav -c:v libx265 -c:a flac -crf 0 -shortest video.mp4``
 
 Parameters:<br>
 -framerate 60    --->    60 fps<br>
--i VideoLyrics.%06d.png    --->    input of a sequence of frames with the name "VideoLyrics." + a number of 6 digits + ".png"<br>
+-i LevelSequence.%06d.png    --->    input of a sequence of frames with the name "LevelSequence." + a number of 6 digits + ".png"<br>
 -i song.wav    --->    input of a song called "song.wav"<br>
 -c:v libx265    --->    the codec of the video. All people use libx264 but that changes the colors and libx265 not.<br>
 -c:a flac    --->    the codec of the audio. FLAC (Free Lossles Audio Codec) without lossing quality<br>
 -crf 0    --->    the minimum level of compression (without compression)<br>
--shortest    --->    that the length of the video is determined by the shortest duration between the song and the frames<br>
+-shortest    --->    that the length of the video is determined by the shortest duration between (song duration) or (frames count by [1 / framerate])<br>
 video.mp4    --->    the name of the output video<br>
 
 **IMPORTANT**: This command will render your video with FULL QUALITY. So, the final file can weights several gigabytes.
 
-If you have any questions, feel free to reach out to me on [my Discord](http://discordapp.com/users/671401036694421517) or send me an email at lorenzon.cesar@hotmail.com.
+## Tutorial
+[![Click to go to the video](Images/VideoTutorial.png)](https://youtu.be/j8eILcgZrBo)
+
+## Contact
+
+If you have any questions, feel free to reach out to me. My contact data is in [LinkTree](https://linktr.ee/lorenzoncesar). César Lorenzon, Game Developer.
